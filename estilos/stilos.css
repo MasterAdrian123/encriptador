@@ -208,4 +208,7 @@ textarea{
     #copiar{
         font-size: 4.5vw;
     }
+    .output{
+        font-size: 7vw;
+    }
 }
