@@ -72,8 +72,7 @@ textarea{
     font-size: 1vw;
 }
 .result{
-    width: 30%;
-    /* width: 40%;  */
+    width: 32vw;
     border-radius: 25px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -81,17 +80,20 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* justify-content:space-between;  */
+    /* justify-content :space-between;  */
     gap: 20px;
     /* padding: 2%; */
 }
-/* estilos del section 'result' al procesar un texto */
-/* width: 40%; */
+/* estilos del section 'result' al procesar un texto en pc*/
 /* justify-content:space-between; */
 /* padding: 2%; */
 
+/* en tablet */
+/* padding normal */
+
 .output{
     display: none;
+    color: rgb(94, 91, 91);
 }
 .vision{
     text-align: center;
@@ -117,7 +119,7 @@ textarea{
     display: none;
 }
 
-@media (max-width:768px){
+@media (max-width:1000px){
     body{
         display: block;
     }
@@ -133,24 +135,77 @@ textarea{
     }
     .container{
         display: block;
-        border: 1px solid black;
-        height: 95%;
+        height: 100%;
     }
     .main{
         width: 90%;
         display: block;
     }
     .textArea{
-        height: 500px;
+        height: 60%;
     }
     textarea{
+        height: 50vh;
         font-size: 5vw;
     }
-    .result{
-        width: 70%;
-        margin: auto;
+    .botones{
+        margin-top: 2vh;
+        justify-content: space-between;
     }
+    .botones>button{
+        width: 48%;
+    }
+    #encriptar {
+        font-size: 2.3vw;
+    }
+    #desencriptar {
+        font-size: 2.3vw;
+    }    
+    #copiar{
+        font-size: 2.3vw;
+    }
+    .result{
+        width: 80%;
+        margin: 2vh auto;
+        padding: 2% 5%;
+    }
+    .output{
+        font-size: 4.5vw;
+    }
+
     .vision>figure{
         display: none;
+    }
+    .vision{
+        font-size: 2.8vw;
+        /* display: none; */
+    }
+}
+
+@media (max-width:500px){
+    .logo{
+        width: 30%;
+    }
+    textarea{
+        font-size: 8vw;
+    }
+    .botones{
+        display: block;
+    }
+    .botones>button{
+        width: 100%;
+        margin: 1.5vh 0;
+    }
+    #encriptar{
+        font-size: 4.5vw;
+    }
+    #desencriptar{
+        font-size: 4.5vw;
+    }
+    .vision{
+        font-size: 5vw;
+    }
+    #copiar{
+        font-size: 4.5vw;
     }
 }
