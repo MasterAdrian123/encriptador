@@ -80,16 +80,8 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* justify-content :space-between;  */
     gap: 20px;
-    /* padding: 2%; */
 }
-/* estilos del section 'result' al procesar un texto en pc*/
-/* justify-content:space-between; */
-/* padding: 2%; */
-
-/* en tablet */
-/* padding normal */
 
 .output{
     display: none;
@@ -178,7 +170,6 @@ textarea{
     }
     .vision{
         font-size: 2.8vw;
-        /* display: none; */
     }
 }
 
