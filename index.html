@@ -8,7 +8,12 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="./assets/Logo.png" alt="logo alura">
+        <img class="logo" src="./assets/logoMaquina.png" alt="logo alura">
+        <div class="contenedor-toggle">
+            <div id="toggle">
+                <img src="./assets/luna.png" alt="luna" class="theme">
+            </div>
+        </div>
     </header>
     <main class="container">
         <section class="main">
@@ -22,17 +27,22 @@
             </div>
         </section>
         <section class="result">
-            <span class="output">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni laborum consectetur libero maxime quam itaque tempore cum sunt tenetur quod. Neque iure deleniti mollitia eligendi et harum autem ab assumenda!</span>
+            <textarea class="output" disabled></textarea>
             <article class="vision">
                 <figure id="muñeco">
                     <img class="muñeco" src="./assets/Muñeco.png" alt="muñeco">
                 </figure>
-                <h3>Ningún mensaje fue encontrado</h3>
+                <h3 id="subtitulo">Ningún mensaje fue encontrado</h3>
                 <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             </article>
             <button id="copiar">Copiar</button>
         </section>
     </main>
+    <footer style="display: none;">
+        <a href="https://www.flaticon.es/iconos-gratis/luna" title="luna iconos">Luna iconos creados por Good Ware - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/dom" title="dom iconos">Dom iconos creados por Good Ware - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/idiomas" title="idiomas iconos">Idiomas iconos creados por Vectoricons - Flaticon</a>
+    </footer>
     <script src="./backend/procesos.js"></script>
 </body>
 </html>

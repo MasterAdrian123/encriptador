@@ -1,21 +1,61 @@
 :root{
-    --variable1: 1px;
+    --light-gris: #dbe5bb;
+    --light-opaque: #e0e09d;
+    --light-brown: #d9c384;
+    --light-brown-2: #c5a449;
+    --light-brown-dark: #d9a87d;
+    --light-rosa-opaque:#dc9590;
+    --light-rosa-opaque-2:#b4716c;
+    --gray-model:rgb(94, 91, 91);
+    --dark-1:#000000;
+    --dark-2:#11171a;
+    --dark-3:#222f2a;
+    --dark-blue-gray:#374453;
+    --dark-blue-gray-2:#4a5f77;
+
+    --dark-gray:#6a7986;
+    --dark-blur:#183352;
+    --dark-blur-2:#254d7a;
+
+    --borde: 1px solid black;
+    --font-guill:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body{
-    background-color: aliceblue;
+    background-color: var(--light-gris);
     display: flex;
 }
 
 header{
     width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
 }
 .logo{
     width: 50%;
     display: block;
-    margin: auto;
+    margin: 10% auto;
 }
-
+.contenedor-toggle{
+    border: var(--borde);
+    border-radius: 20px;
+    display: flex;
+    padding: 5px;
+    width: 50%;
+    margin: 0 auto;
+}
+#toggle{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor:pointer;
+    display: flex;
+    transition: .36s;
+}
+.theme{
+    width: 100%;
+}
 .container{
     width: 100%;
     display: flex;
@@ -40,43 +80,61 @@ textarea{
     height: 100%;
     background: none;
     border: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:var(--font-guill);
     font-size:2vw;
+    resize: none;
 }
 .informativo{
     display: flex;
     gap: 15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--font-guill);
     color: rgb(161, 159, 159);
 }
 .botones{
     display: flex;
     justify-content:space-around;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--font-guill);
 }
 .botones>button{
     width:40% ;
     padding: 20px;
-    border: 1px solid black;
-    border-radius: 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
 }
 #encriptar{
-    background-color: rgb(2, 2, 102);
-    color: rgba(255, 255, 255, 0.925);
+    background-color: var(--light-brown);
+    border: none;
+    color: black;
     font-size: 1vw;
 }
+
 #desencriptar{
-    background-color: rgb(226, 225, 225);
-    border: 1px solid blue;
-    color: rgba(0, 0, 255, 0.781);
+    background-color:var(--light-rosa-opaque);
+    border: none;
+    color: black; 
     font-size: 1vw;
 }
+
+#encriptar:hover{
+    background-color: var(--light-brown-2);
+    padding: 25px;
+    width: 43%;
+    font-size: 1.4vw;
+}
+#desencriptar:hover{
+    background-color: var(--light-rosa-opaque-2);
+    padding: 25px;
+    width: 43%;
+    font-size: 1.4vw;
+}
+
 .result{
-    width: 32vw;
+    width: 26vw;
     border-radius: 25px;
-    background-color: white;
+    background-color: var(--light-opaque);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:var(--font-guill);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +143,9 @@ textarea{
 
 .output{
     display: none;
-    color: rgb(94, 91, 91);
+    color: var(--gray-model);
+    max-height: 80%;
+    font-size: 1.7vw;
 }
 .vision{
     text-align: center;
@@ -94,7 +154,7 @@ textarea{
     width: 100%;
 }
 .vision>p{
-    color: rgb(94, 91, 91);
+    color: var(--gray-model);
 }
 #muñeco{
     width: 100%;
@@ -103,12 +163,17 @@ textarea{
 #copiar{
     width: 100%;
     padding: 20px;
-    border: 1px solid;
+    border: 1px solid #868a79;
     border-radius: 24px;
-    background-color: rgba(1, 104, 6, 0.945);
-    color: rgba(255, 255, 255, 0.925);
+    background-color: var(--light-gris);
     font-size: 1vw;
+    cursor: pointer;
+    transition: .3s;
     display: none;
+}
+
+#copiar:hover{
+    font-size: 1.4vw;
 }
 
 @media (max-width:1000px){
@@ -119,12 +184,24 @@ textarea{
         width: 100%;
         display: flex;
         margin: 4vh 0;
+        flex-direction: row;
     }
     .logo{
-        display: flex;
         width: 20%;
-        margin-left: 0;
+        margin: 0px;
     }
+    .contenedor-toggle{
+        width: 23%;
+        height: 50px;
+        margin: auto 30px;
+        border-radius: 40px;
+    }
+   #toggle{
+        width: 40px;
+        height: 40px;
+        margin-top: auto ;
+        margin-bottom: auto ;
+   }
     .container{
         display: block;
         height: 100%;
@@ -135,6 +212,9 @@ textarea{
     }
     .textArea{
         height: 60%;
+    }
+    .iconoInformativo{
+        width: 30px;
     }
     textarea{
         height: 50vh;
@@ -148,13 +228,29 @@ textarea{
         width: 48%;
     }
     #encriptar {
-        font-size: 2.3vw;
+        font-size: 2.8vw;
     }
     #desencriptar {
-        font-size: 2.3vw;
-    }    
+        font-size: 2.8vw;
+    }
+    #encriptar:hover{
+        padding: 10px;
+        width: 48%;
+        font-size: 3.7vw;
+    }
+    #desencriptar:hover{
+        padding: 10px;
+        width: 48%;
+        font-size: 3.7vw;
+    }
     #copiar{
-        font-size: 2.3vw;
+        font-size: 3vw;
+    }
+    #copiar:hover{
+        font-size: 4.1vw;
+    }
+    .informativo{
+        font-size: 3vw;
     }
     .result{
         width: 80%;
@@ -174,11 +270,35 @@ textarea{
 }
 
 @media (max-width:500px){
-    .logo{
-        width: 30%;
+    header{
+        width: 100%;
+        display: flex;
+        margin: 4vh 0;
+        flex-direction: row;
     }
+    .logo{
+        width: 25%;
+    }
+    .contenedor-toggle{
+        width: 25%;
+        height: 25px;
+        margin: auto 30px;
+        border-radius: 40px;
+    }
+   #toggle{
+        width: 20px;
+        height: 20px;
+        margin-top: auto ;
+        margin-bottom: auto ;
+   }
     textarea{
         font-size: 8vw;
+    }
+    .iconoInformativo{
+        width: 20px;
+    }
+    .informativo{
+        font-size:5vw;
     }
     .botones{
         display: block;
@@ -193,11 +313,25 @@ textarea{
     #desencriptar{
         font-size: 4.5vw;
     }
+    #encriptar:hover{
+        padding: 20px;
+        width: 100%;
+        font-size: 5.7vw;
+    }
+    #desencriptar:hover{
+        padding: 20px;
+        width: 100%;
+        font-size: 5.7vw;
+    }
     .vision{
         font-size: 5vw;
     }
     #copiar{
         font-size: 4.5vw;
+    }
+    #copiar:hover{
+        padding: 20px;
+        font-size: 7.4vw;
     }
     .output{
         font-size: 7vw;
