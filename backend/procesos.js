@@ -8,16 +8,27 @@ const toggle = document.getElementById('toggle');
 const contenedorToggle = document.querySelector(".contenedor-toggle");
 const theme = document.querySelector(".theme");
 const input = document.getElementById("input");
+const contenedorModal = document.querySelector(".container-modal");
+const botonModal= document.getElementById("cerrar-modal");
 let isDark = false;
 
 // todos los caracteres especiales que no quiero que se inserten en el text area
 const textArea = document.getElementById("input");
-const regex = /^[^'"\\\/<>=*@&]*$/;
+const regex = /^[^'A-Z"\\\/<>=*@&]*$/;
+
+const visibilizarModal = (titulo,parrafo)=>{
+    document.body.style.overflow="hidden";
+    contenedorModal.style.display="flex";
+    let tituloModal = document.getElementById("titulo-modal");
+    tituloModal.textContent = titulo;
+    let parrafoModal = document.getElementById("describcion-modal");
+    parrafoModal.textContent = parrafo;
+}
 
 function alertarCaracteresEspeciales(ev){
     if (!regex.test(ev.target.value)) {
-        alert("NO SE PERMITEN CARACTERES ESPECIALES");
-        textArea.value="";
+        visibilizarModal("SIN MAYUSCULAS O CARACTERES ESPECIALES","No es permitido usar mayusculas o caracteres especiales, debe continuar sin tener que usarlos.");
+        textArea.value = textArea.value.substring(0,textArea.value.length - 1);
     }
 }
 textArea.addEventListener('input', alertarCaracteresEspeciales);
@@ -149,10 +160,16 @@ const themeMode = ()=>{
 
 const copiar = ()=>{
     navigator.clipboard.writeText(output.value);
-    alert("texto copiado");
+    visibilizarModal("TEXTO COPIADO","El texto se copio en su portapapeles, ahora puede pegarlo donde guste");
+}
+
+const cerrarModal = ()=>{
+    contenedorModal.style.display = "none";
+    document.body.style.overflow="";
 }
 
 botonEncriptar.addEventListener('click',encriptar);
 botonDesencriptar.addEventListener("click",desencriptar);
 toggle.addEventListener('click',themeMode);
 botonCopiar.addEventListener('click',copiar);
+botonModal.addEventListener('click',cerrarModal);
